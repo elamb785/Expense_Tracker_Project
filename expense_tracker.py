@@ -12,24 +12,6 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
                                AutoMinorLocator)
-                            
-# ISSUES:
-# 1) If a user clicks view data or cancel, I want the fields to
-# not clear.
-# 2) Needs try catch statements to make sure that 
-#   a) Users input year and month as integers
-#   b) All expense categories are inputted as floats (only period delimiters)
-#   c) No characters are ever inputted
-# 3) The program should not stop if the user clicks cancel then clicks X.
-#   a) can be awkwardly fixed with adding ", background_color = 'blue',no_titlebar=True" to its popup arguments
-# 4) The average button drops the trailing zero when performing round with integer-valued
-# floats. Decimal class would resolve this.
-
-# ADD-ONS
-# 1) A compare button so that we can compare plots from different years
-# 2) Introduce a CLEAR button to remove one entry from the database (probably by
-# the user inputting the year and month and bill that they want to change--no bill
-# indicated means clear all data from that month and year)
 
 # Helper function
 matplotlib.use("TkAgg")
@@ -157,13 +139,15 @@ def find_averages(sum_winter, sum_spring, sum_summer, sum_fall):
     return aver_winter, aver_spring, aver_summer, aver_fall
 
 def get_index_to_change(database, year, month):
-    '''Determine the index of the year/month element in the database'''
+    '''Determine the index of the year/month element in the list of previous entries'''
     indices = [j for j, x in enumerate(database['Year']) if x == int(year)]
+    matches = []
     if indices:
-        for index, i in enumerate(indices):
-            # if the month at that i is not month then we need to remove that i value from indices
+        for _, i in enumerate(indices):
             if database['Month'][i] != int(month):
-                del indices[index]
+                matches.append(i)
+        for i in matches:
+            indices.remove(i) 
     return indices
 
 def verify_in_database(database, year, month, data_to_check=[]):
@@ -279,7 +263,6 @@ while True:
             l = (2, 3, 4, 5, 6, 7, 8, 9, 10)
             ans = {k:values[k] for k in l if k in values}
             filled_entries = [k for k, v in ans.items() if v != '']
-            print(filled_entries)
 
             if filled_entries == []:
                 continue
