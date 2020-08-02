@@ -1,7 +1,7 @@
 # Expense_Tracker_Project
 Track your finances visually using PySimpleGUI!
 
-# OVERVIEW:
+# Overview
 A user can input their monthly bills during the year (or at the end of the year) into the GUI. Values may be edited 
 and changed individually or in groups without corrupting the database. Maplotlib canvas is embedded in the GUI and
 permits a user to generate a plot for their records. This plot demonstrates bills for each month for a given category 
@@ -14,6 +14,8 @@ with other like tools for budgeting.
 ![img_home](https://user-images.githubusercontent.com/66393007/89121566-c08d4500-d474-11ea-9c38-df79fb5e3789.JPG)
 Fig 1. Inputting Data of Various Types on Home Page
 
+![img_plot](https://user-images.githubusercontent.com/66393007/89131979-af205900-d4c5-11ea-8f17-726583b9d863.JPG)
+Fig 2. Creating a Matplotlib Figure with User Data
 
 
 
