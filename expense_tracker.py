@@ -12,11 +12,14 @@ import matplotlib
 import matplotlib.pyplot as plt
 from matplotlib.ticker import (MultipleLocator, FormatStrFormatter,
                                AutoMinorLocator)
+<<<<<<< Updated upstream
 # <<<<<<< HEAD
 #
 # =======
 #                            
 # >>>>>>> 63c20618e8381035fe76c21ff641dd7975bf6f81
+=======
+>>>>>>> Stashed changes
 
 # Helper function
 matplotlib.use("TkAgg")
