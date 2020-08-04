@@ -20,10 +20,10 @@ available.
 4) If the total is not provided, the program computes it for the user for future plotting.
 
 # In Use
-![img_home](https://user-images.githubusercontent.com/66393007/89121566-c08d4500-d474-11ea-9c38-df79fb5e3789.JPG)
+![img_home](img_home.JPG?raw=true)
 Fig 1. Inputting Data of Various Types on Home Page
 
-![img_plot](https://user-images.githubusercontent.com/66393007/89131979-af205900-d4c5-11ea-8f17-726583b9d863.JPG)
+![img_plot](img_plot.JPG?raw=true)
 Fig 2. Creating a Matplotlib Figure with User Data
 
 
